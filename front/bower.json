@@ -1,0 +1,23 @@
+{
+  "name": "PrivacyInformer",
+  "homepage": "https://github.com/parquetn/PrivacyInformer",
+  "authors": [
+    "Nicolas P"
+  ],
+  "description": "Front of PrivacyInformer app",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.6",
+    "angular-material": "^1.1.5",
+    "material-design-icons": "^3.0.1"
+  }
+}
