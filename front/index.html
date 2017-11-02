@@ -21,16 +21,20 @@
           <md-button ng-click="close()" class="md-accent" hide-gt-md>
             Close Sidenav Left
           </md-button>
-          <p hide show-gt-md>
-            This sidenav is locked open on your device. To go back to the default behavior,
-            narrow your display.
-          </p>
+          <md-list flex>
+            <md-list-item ng-repeat="item in menuContent" ng-href="{{item.path}}">
+              {{item.title}}
+            <md-list-item>
+          </md-list>
         </md-content>
       </md-sidenav>
       <md-content flex>
         <md-toolbar layout="row" md-whiteframe="4">
           <div class="md-toolbar-tools">
-            <span>Normal</span>
+            <md-button class="md-icon-button md-primary" aria-label="Settings" ng-click="toggleLeft()">
+              <md-icon md-font-icon="menu" aria-label="menu">menu</md-icon>
+            </md-button>
+            ok
           </div>
         </md-toolbar>
         <div layout-padding layout="column">

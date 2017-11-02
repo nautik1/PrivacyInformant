@@ -39,17 +39,6 @@ angular.module('PrivacyInformant', ['ngMaterial'])
          });
      }, 200);
    }
-
-   function buildToggler(navID) {
-     return function() {
-       // Component lookup should always be available since we are not using `ng-if`
-       $mdSidenav(navID)
-         .toggle()
-         .then(function () {
-           $log.debug("toggle " + navID + " is done");
-         });
-     };
-   }
  })
  .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
    $scope.close = function () {
@@ -59,4 +48,17 @@ angular.module('PrivacyInformant', ['ngMaterial'])
          $log.debug("close LEFT is done");
        });
    };
+
+   $scope.menuContent = [{
+     title: "Make a request",
+     path: "/request"
+   }, {
+     title: "Services list",
+     path: "/services"
+   }, {
+     title: "About",
+     path: "/about"
+   }];
+
+
  });
