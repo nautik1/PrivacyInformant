@@ -1,10 +1,10 @@
 {
-  "name": "PrivacyInformer",
-  "homepage": "https://github.com/parquetn/PrivacyInformer",
+  "name": "PrivacyInformant",
+  "homepage": "https://github.com/parquetn/PrivacyInformant",
   "authors": [
     "Nicolas P"
   ],
-  "description": "Front of PrivacyInformer app",
+  "description": "Front of PrivacyInformant app",
   "main": "index.html",
   "license": "MIT",
   "private": true,

@@ -1,5 +1,5 @@
 {
-  "name": "privacyinformer",
+  "name": "privacyinformant",
   "version": "1.0.0",
   "description": "Product can be used to manage a diving group : register licences and limits and generate groups",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parquetn/PrivacyInformer.git"
+    "url": "git+https://github.com/parquetn/PrivacyInformant.git"
   },
   "keywords": [
     "Diving"
@@ -17,9 +17,9 @@
   "author": "Nicolas P",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/parquetn/PrivacyInformer/issues"
+    "url": "https://github.com/parquetn/PrivacyInformant/issues"
   },
-  "homepage": "https://github.com/parquetn/PrivacyInformer#readme",
+  "homepage": "https://github.com/parquetn/PrivacyInformant#readme",
   "devDependencies": {
     "nodemon": "^1.12.1"
   },

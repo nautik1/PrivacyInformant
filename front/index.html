@@ -5,54 +5,52 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="bower_components/material-design-icons/iconfont/material-icons.css">
 </head>
-<body ng-app="PrivacyInformer" ng-cloak>
-  <md-sidenav
-      class="md-sidenav-left"
-      md-component-id="left"
-      md-is-locked-open="$mdMedia('gt-md')"
-      md-whiteframe="4">
+<body ng-app="PrivacyInformant" ng-cloak>
+  <div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+    <section layout="row" flex>
+      <md-sidenav
+          class="md-sidenav-left"
+          md-component-id="left"
+          md-is-locked-open="$mdMedia('gt-md')"
+          md-whiteframe="4">
 
-    <md-toolbar class="md-theme-indigo">
-      <h1 class="md-toolbar-tools">Sidenav Left</h1>
-    </md-toolbar>
-    <md-content layout-padding ng-controller="LeftCtrl">
-      <md-button ng-click="close()" class="md-primary" hide-gt-md>
-        Close Sidenav Left
-      </md-button>
-      <p hide show-gt-md>
-        This sidenav is locked open on your device. To go back to the default behavior,
-        narrow your display.
-      </p>
-    </md-content>
-
-  </md-sidenav>
-  <div layout="column" tabindex="-1" role="main" flex="" class="layout-column flex">
-      <md-toolbar class="md-hue-2">
+        <md-toolbar>
+          <h1 class="md-toolbar-tools">Privacy Informant</h1>
+        </md-toolbar>
+        <md-content layout-padding ng-controller="LeftCtrl">
+          <md-button ng-click="close()" class="md-accent" hide-gt-md>
+            Close Sidenav Left
+          </md-button>
+          <p hide show-gt-md>
+            This sidenav is locked open on your device. To go back to the default behavior,
+            narrow your display.
+          </p>
+        </md-content>
+      </md-sidenav>
+      <md-content flex>
+        <md-toolbar layout="row" md-whiteframe="4">
           <div class="md-toolbar-tools">
-              <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
-                  <md-icon>home</md-icon>
-              </md-button>
-
-              <h2 flex md-truncate>Welcome to Privacy Informer!</h2>
-
-              <md-button class="md-icon-button" aria-label="Favorite">
-                  <md-icon>favorite</md-icon>
-              </md-button>
-
-              <md-button class="md-icon-button" aria-label="More">
-                  <md-icon>more_vert</md-icon>
-              </md-button>
+            <span>Normal</span>
           </div>
-      </md-toolbar>
-
-      <md-list ng-controller="ListCtrl as todolist" ng-cloak>
-          <md-subheader class="md-no-sticky">Todo List</md-subheader>
-          <md-list-item ng-repeat="todo in todolist.todos">
-              <p> {{ todo.text }} </p>
-              <md-checkbox class="md-secondary" ng-model="todo.isDone"></md-checkbox>
-          </md-list-item>
-      </md-list>
-    </div>
+        </md-toolbar>
+        <div layout-padding layout="column">
+          <p>
+          The left sidenav will 'lock open' on a medium (>=960px wide) device.
+          </p>
+          <p>
+          The right sidenav will focus on a specific child element.
+          </p>
+          <div>
+            <md-button ng-click="toggleLeft()"
+              class="md-primary" hide-gt-md>
+              Toggle left
+            </md-button>
+          </div>
+        </div>
+        <div flex></div>
+      </md-content>
+    </section>
+  </div>
 
 <!-- Angular Material requires Angular.js Libraries -->
 <script src="bower_components/angular/angular.min.js"></script>

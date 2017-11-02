@@ -2,11 +2,11 @@ var express = require('express'),
     app = express(),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
-    Event = require('./api/models/privacyInformerModel'),
+    Event = require('./api/models/privacyInformantModel'),
     bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-var promise = mongoose.connect('mongodb://localhost/PrivacyInformerDB', {
+var promise = mongoose.connect('mongodb://localhost/PrivacyInformantDB', {
     useMongoClient: true,
     /* other options */
 });
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use(express.static('front'));
 
-var routes = require('./api/routes/privacyInformerRoutes'); //importing route
+var routes = require('./api/routes/privacyInformantRoutes'); //importing route
 
 routes(app); //register the route
 
@@ -27,4 +27,4 @@ app.use(function(req, res) {
 
 app.listen(port);
 
-console.log('PrivacyInformer RESTful API server started on: ' + port);
+console.log('PrivacyInformant RESTful API server started on: ' + port);
