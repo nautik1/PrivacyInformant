@@ -1,4 +1,4 @@
-angular.module('PrivacyInformant', ['ngMaterial'])
+angular.module('PrivacyInformant', ['ngMaterial', 'ngRoute'])
 .config(function($mdThemingProvider) {
 
   $mdThemingProvider.definePalette('pipalette', {
@@ -40,6 +40,25 @@ angular.module('PrivacyInformant', ['ngMaterial'])
   $mdThemingProvider.theme('default')
     .primaryPalette('pipalette')
     .accentPalette('blue');
+})
+.config(function($routeProvider, $locationProvider) {
+  $locationProvider.hashPrefix('');
+  $routeProvider
+   .when('/', {
+    templateUrl: 'partials/home.template.html'
+  })
+  .when('/create-request/', {
+    templateUrl: 'partials/create-request.template.html'
+  })
+  .when('/follow-request/', {
+    templateUrl: 'partials/follow-request.template.html'
+  })
+  .when('/services-list/', {
+    templateUrl: 'partials/services-list.template.html'
+  })
+  .when('/about/', {
+    templateUrl: 'partials/about.template.html'
+  })
 })
 .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
    $scope.toggleLeft = buildDelayedToggler('left');
@@ -88,13 +107,13 @@ angular.module('PrivacyInformant', ['ngMaterial'])
 
    $scope.menuContent = [{
      title: "Follow a request",
-     path: "/follow"
+     path: "#/follow-request"
    }, {
      title: "Services list",
-     path: "/services"
+     path: "#/services-list"
    }, {
      title: "About",
-     path: "/about"
+     path: "#/about"
    }];
 
 
