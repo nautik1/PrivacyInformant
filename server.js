@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static('front'));
+app.use(express.static('front/app'));
 
 var routes = require('./api/routes/privacyInformantRoutes'); //importing route
 
