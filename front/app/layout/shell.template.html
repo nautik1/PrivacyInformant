@@ -1,0 +1,47 @@
+<div ng-controller="ShellController as shell">
+  <md-sidenav
+      class="md-sidenav-left site-sidenav"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-whiteframe="4">
+
+    <header class="nav-header">
+      <a ng-href="/" class="pi-logo">
+        <img src="/app/static/img/pi_logo.png" alt="" />
+        <h1 class="md-heading">Privacy Informant</h1>
+      </a>
+    </header>
+
+    <div layout="row" layout-align="center center">
+      <md-button class="md-accent md-raised big-button" ng-href="#/create-request">
+        Give me my data!
+      </md-button>
+    </div>
+
+    <md-content layout-padding ng-controller="LeftController as left">
+      <md-list flex>
+        <md-list-item ng-repeat="item in menuContent" ng-href="{{item.path}}">
+          {{item.title}}
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-sidenav>
+
+  <div layout="column" tabIndex="-1" role="main" flex>
+    <md-content flex>
+      <md-toolbar layout="row" md-whiteframe="4">
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Settings" hide-gt-md ng-click="toggleLeft()">
+            <md-icon md-font-icon="menu" aria-label="menu">menu</md-icon>
+          </md-button>
+          Welcome!
+          <span flex></span>
+        </div>
+      </md-toolbar>
+
+      <md-content md-scroll-y layout="column" layout-fill flex>
+        <div ng-view layout-padding flex="noshrink"></div>
+      </md-content>
+    </md-content>
+  </div>
+</div>

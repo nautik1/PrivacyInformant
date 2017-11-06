@@ -18,7 +18,6 @@ app.use(bodyParser.json());
 
 // Serve angular application in front
 app.use(express.static('front'));
-app.use(express.static('front/app'));
 
 // Register router with routes to app
 app.use('/rest', restRouter);
